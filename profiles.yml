@@ -1,0 +1,12 @@
+jaffle_shop:
+  target: dev_dws
+  outputs:
+    dev_dws:
+      type: gaussdbdws
+      host: 192.168.0.205
+      user: dbadmin
+      password: Audaque@1234
+      port: 8000
+      dbname: gaussdb
+      schema: jaffle_shop
+      threads: 1

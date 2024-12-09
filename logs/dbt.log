@@ -1,0 +1,923 @@
+
+[0m19:40:45.192042 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa04fcdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9e86bbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9e86bc40>]}
+
+
+============================== 19:40:45.197447 | 48b0f291-19d0-4a1a-9c61-342eb13fdcb9 ==============================
+[0m19:40:45.197447 [info ] [MainThread]: Running with dbt=1.8.9
+[0m19:40:45.198666 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/cyl/jaffle-shop-dws', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/opt/cyl/jaffle-shop-dws/logs', 'debug': 'True', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run -d --print', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m19:40:45.573531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa02a4550>]}
+[0m19:40:45.708923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9ded64f0>]}
+[0m19:40:45.710510 [info ] [MainThread]: Registered adapter: gaussdbdws=1.0.1
+[0m19:40:45.930898 [debug] [MainThread]: checksum: 132857a23e9d07220246854f7763165174ce9b737cfc7867629ace4294e520b1, vars: {}, profile: , target: , version: 1.8.9
+[0m19:40:45.932604 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:40:45.933554 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9df65ca0>]}
+[0m19:40:50.783123 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.jaffle_shop.relationships_orders_customer_id__customer_id__ref_stg_customers_.918495ce16' (models/marts/orders.yml) depends on a node named 'stg_customers' in package '' which was not found
+[0m19:40:51.294070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9df126d0>]}
+[0m19:40:51.782546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6f7980d0>]}
+[0m19:40:51.783984 [info ] [MainThread]: Found 7 models, 11 data tests, 6 sources, 19 metrics, 729 macros, 6 semantic models, 3 saved queries, 2 unit tests
+[0m19:40:51.784974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6f44f8b0>]}
+[0m19:40:51.790635 [info ] [MainThread]: 
+[0m19:40:51.792011 [debug] [MainThread]: Acquiring new gaussdbdws connection 'master'
+[0m19:40:51.802991 [debug] [ThreadPool]: Acquiring new gaussdbdws connection 'list_gaussdb'
+[0m19:40:51.863731 [debug] [ThreadPool]: Using gaussdbdws connection "list_gaussdb"
+[0m19:40:51.864832 [debug] [ThreadPool]: On list_gaussdb: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "connection_name": "list_gaussdb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:40:51.865842 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:40:51.920931 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.055 seconds
+[0m19:40:51.923951 [debug] [ThreadPool]: On list_gaussdb: Close
+[0m19:40:51.927531 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gaussdb, now list_gaussdb_jaffle_shop)
+[0m19:40:51.945561 [info ] [ThreadPool]: Debug:gaussdbdws__list_relations_without_caching: The raw value of gaussdb_type is: 1
+[0m19:40:51.946668 [debug] [ThreadPool]: Using gaussdbdws connection "list_gaussdb_jaffle_shop"
+[0m19:40:51.947608 [debug] [ThreadPool]: On list_gaussdb_jaffle_shop: BEGIN
+[0m19:40:51.948553 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:40:51.993709 [debug] [ThreadPool]: SQL status: BEGIN in 0.045 seconds
+[0m19:40:51.994699 [debug] [ThreadPool]: Using gaussdbdws connection "list_gaussdb_jaffle_shop"
+[0m19:40:51.995691 [debug] [ThreadPool]: On list_gaussdb_jaffle_shop: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "connection_name": "list_gaussdb_jaffle_shop"} */
+select
+      'gaussdb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'jaffle_shop'
+    union all
+    select
+      'gaussdb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'jaffle_shop'
+    
+    -- GaussDB low version doesn't support materialized views, so we only union the tables and views if gaussdb_type is 1
+    
+    union all
+    select
+      'gaussdb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'jaffle_shop'
+    
+  
+[0m19:40:52.004343 [debug] [ThreadPool]: SQL status: SELECT 12 in 0.008 seconds
+[0m19:40:52.007701 [debug] [ThreadPool]: On list_gaussdb_jaffle_shop: ROLLBACK
+[0m19:40:52.010332 [debug] [ThreadPool]: On list_gaussdb_jaffle_shop: Close
+[0m19:40:52.027884 [debug] [MainThread]: Using gaussdbdws connection "master"
+[0m19:40:52.028890 [debug] [MainThread]: On master: BEGIN
+[0m19:40:52.029805 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:40:52.071002 [debug] [MainThread]: SQL status: BEGIN in 0.041 seconds
+[0m19:40:52.072003 [debug] [MainThread]: Using gaussdbdws connection "master"
+[0m19:40:52.073095 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m19:40:52.086753 [debug] [MainThread]: SQL status: SELECT 5 in 0.012 seconds
+[0m19:40:52.089842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa02019a0>]}
+[0m19:40:52.090990 [debug] [MainThread]: On master: ROLLBACK
+[0m19:40:52.093532 [debug] [MainThread]: Using gaussdbdws connection "master"
+[0m19:40:52.094489 [debug] [MainThread]: On master: BEGIN
+[0m19:40:52.098371 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m19:40:52.099361 [debug] [MainThread]: On master: COMMIT
+[0m19:40:52.100340 [debug] [MainThread]: Using gaussdbdws connection "master"
+[0m19:40:52.101270 [debug] [MainThread]: On master: COMMIT
+[0m19:40:52.103702 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:52.104693 [debug] [MainThread]: On master: Close
+[0m19:40:52.106079 [info ] [MainThread]: Concurrency: 1 threads (target='dev_dws')
+[0m19:40:52.107062 [info ] [MainThread]: 
+[0m19:40:52.111026 [debug] [Thread-1  ]: Began running node model.jaffle_shop.locations
+[0m19:40:52.112625 [info ] [Thread-1  ]: 1 of 7 START sql table model jaffle_shop.locations ............................. [RUN]
+[0m19:40:52.113921 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_gaussdb_jaffle_shop, now model.jaffle_shop.locations)
+[0m19:40:52.115131 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.locations
+[0m19:40:52.135802 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.locations"
+[0m19:40:52.137467 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.locations
+[0m19:40:52.231267 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.locations"
+[0m19:40:52.233015 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.locations"
+[0m19:40:52.234159 [debug] [Thread-1  ]: On model.jaffle_shop.locations: BEGIN
+[0m19:40:52.235262 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:52.276430 [debug] [Thread-1  ]: SQL status: BEGIN in 0.041 seconds
+[0m19:40:52.277608 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.locations"
+[0m19:40:52.278756 [debug] [Thread-1  ]: On model.jaffle_shop.locations: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.locations"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."locations__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with
+
+locations as (
+
+    select * from  "gaussdb"."jaffle_shop"."stg_locations"
+
+)
+
+select * from locations
+  );
+  
+[0m19:40:52.290296 [debug] [Thread-1  ]: SQL status: INSERT 0 5 in 0.010 seconds
+[0m19:40:52.308445 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.locations"
+[0m19:40:52.309639 [debug] [Thread-1  ]: On model.jaffle_shop.locations: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.locations"} */
+alter table "gaussdb"."jaffle_shop"."locations" rename to "locations__dbt_backup"
+[0m19:40:52.313017 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:52.321929 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.locations"
+[0m19:40:52.323112 [debug] [Thread-1  ]: On model.jaffle_shop.locations: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.locations"} */
+alter table "gaussdb"."jaffle_shop"."locations__dbt_tmp" rename to "locations"
+[0m19:40:52.325996 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:52.373565 [debug] [Thread-1  ]: On model.jaffle_shop.locations: COMMIT
+[0m19:40:52.374752 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.locations"
+[0m19:40:52.375893 [debug] [Thread-1  ]: On model.jaffle_shop.locations: COMMIT
+[0m19:40:52.378712 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:52.395143 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."locations__dbt_backup"
+[0m19:40:52.405470 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.locations"
+[0m19:40:52.406646 [debug] [Thread-1  ]: On model.jaffle_shop.locations: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.locations"} */
+drop table if exists "gaussdb"."jaffle_shop"."locations__dbt_backup" cascade
+[0m19:40:52.411644 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.004 seconds
+[0m19:40:52.417589 [debug] [Thread-1  ]: On model.jaffle_shop.locations: Close
+[0m19:40:52.421402 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6e8389d0>]}
+[0m19:40:52.423079 [info ] [Thread-1  ]: 1 of 7 OK created sql table model jaffle_shop.locations ........................ [[32mINSERT 0 5[0m in 0.31s]
+[0m19:40:52.424780 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.locations
+[0m19:40:52.426077 [debug] [Thread-1  ]: Began running node model.jaffle_shop.metricflow_time_spine
+[0m19:40:52.427637 [info ] [Thread-1  ]: 2 of 7 START sql table model jaffle_shop.metricflow_time_spine ................. [RUN]
+[0m19:40:52.428919 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.jaffle_shop.locations, now model.jaffle_shop.metricflow_time_spine)
+[0m19:40:52.430075 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.metricflow_time_spine
+[0m19:40:52.463988 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.465201 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: BEGIN
+[0m19:40:52.466305 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:52.508355 [debug] [Thread-1  ]: SQL status: BEGIN in 0.042 seconds
+[0m19:40:52.509512 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.510662 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.metricflow_time_spine"} */
+
+
+        select 
+        extract(day FROM (cast(
+
+    cast(cast(
+    cast(now() as timestamp)
+        at time zone 'UTC' at time zone 'America/Los_Angeles' as timestamp
+) as date) + ((interval '1 day') * (1))
+
+ as date))::date - (
+
+    cast(cast(
+    cast(now() as timestamp)
+        at time zone 'UTC' at time zone 'America/Los_Angeles' as timestamp
+) as date) + ((interval '1 day') * (-3650))
+
+)::date)
+    
+[0m19:40:52.514236 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.002 seconds
+[0m19:40:52.518651 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.520081 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.metricflow_time_spine
+[0m19:40:52.609921 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.611417 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.612669 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.metricflow_time_spine"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."metricflow_time_spine__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- metricflow_time_spine.sql
+with
+
+days as (
+
+    --for BQ adapters use "DATE('01/01/2000','mm/dd/yyyy')"
+    
+    with date_spine as
+(
+
+    
+
+
+
+
+
+with rawdata as (
+
+    
+
+    
+
+    with p as (
+        select 0 as generated_number union all select 1
+    ), unioned as (
+
+    select
+
+    
+    p0.generated_number * power(2, 0)
+     + 
+    
+    p1.generated_number * power(2, 1)
+     + 
+    
+    p2.generated_number * power(2, 2)
+     + 
+    
+    p3.generated_number * power(2, 3)
+     + 
+    
+    p4.generated_number * power(2, 4)
+     + 
+    
+    p5.generated_number * power(2, 5)
+     + 
+    
+    p6.generated_number * power(2, 6)
+     + 
+    
+    p7.generated_number * power(2, 7)
+     + 
+    
+    p8.generated_number * power(2, 8)
+     + 
+    
+    p9.generated_number * power(2, 9)
+     + 
+    
+    p10.generated_number * power(2, 10)
+     + 
+    
+    p11.generated_number * power(2, 11)
+    
+    
+    + 1
+    as generated_number
+
+    from
+
+    
+    p as p0
+     cross join 
+    
+    p as p1
+     cross join 
+    
+    p as p2
+     cross join 
+    
+    p as p3
+     cross join 
+    
+    p as p4
+     cross join 
+    
+    p as p5
+     cross join 
+    
+    p as p6
+     cross join 
+    
+    p as p7
+     cross join 
+    
+    p as p8
+     cross join 
+    
+    p as p9
+     cross join 
+    
+    p as p10
+     cross join 
+    
+    p as p11
+    
+    
+
+    )
+
+    select *
+    from unioned
+    where generated_number <= 3651.0
+    order by generated_number
+
+
+
+),
+
+all_periods as (
+
+    select (
+        
+
+    
+
+    cast(cast(
+    cast(now() as timestamp)
+        at time zone 'UTC' at time zone 'America/Los_Angeles' as timestamp
+) as date) + ((interval '1 day') * (-3650))
+
+ + ((interval '1 day') * ((row_number() over (order by 1) - 1)))
+
+
+    ) as date_day
+    from rawdata
+
+),
+
+filtered as (
+
+    select *
+    from all_periods
+    where date_day <= cast(
+
+    cast(cast(
+    cast(now() as timestamp)
+        at time zone 'UTC' at time zone 'America/Los_Angeles' as timestamp
+) as date) + ((interval '1 day') * (1))
+
+ as date)
+
+)
+
+select * from filtered
+
+
+
+)
+select
+    cast(d.date_day as timestamp) as date_day
+from
+    date_spine d
+
+
+
+),
+
+cast_to_date as (
+
+    select cast(date_day::text as date) as date_day
+
+    from days
+
+)
+
+select * from cast_to_date
+  );
+  
+[0m19:40:52.648610 [debug] [Thread-1  ]: SQL status: INSERT 0 3651 in 0.035 seconds
+[0m19:40:52.657564 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.658656 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.metricflow_time_spine"} */
+alter table "gaussdb"."jaffle_shop"."metricflow_time_spine" rename to "metricflow_time_spine__dbt_backup"
+[0m19:40:52.662124 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:52.670865 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.671974 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.metricflow_time_spine"} */
+alter table "gaussdb"."jaffle_shop"."metricflow_time_spine__dbt_tmp" rename to "metricflow_time_spine"
+[0m19:40:52.674789 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:52.678139 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: COMMIT
+[0m19:40:52.679207 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.680281 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: COMMIT
+[0m19:40:52.682929 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:52.690370 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."metricflow_time_spine__dbt_backup"
+[0m19:40:52.692096 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.metricflow_time_spine"
+[0m19:40:52.693182 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.metricflow_time_spine"} */
+drop table if exists "gaussdb"."jaffle_shop"."metricflow_time_spine__dbt_backup" cascade
+[0m19:40:52.697683 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.003 seconds
+[0m19:40:52.700764 [debug] [Thread-1  ]: On model.jaffle_shop.metricflow_time_spine: Close
+[0m19:40:52.702210 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6e89edf0>]}
+[0m19:40:52.703814 [info ] [Thread-1  ]: 2 of 7 OK created sql table model jaffle_shop.metricflow_time_spine ............ [[32mINSERT 0 3651[0m in 0.27s]
+[0m19:40:52.705348 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.metricflow_time_spine
+[0m19:40:52.706539 [debug] [Thread-1  ]: Began running node model.jaffle_shop.order_items
+[0m19:40:52.708020 [info ] [Thread-1  ]: 3 of 7 START sql table model jaffle_shop.order_items ........................... [RUN]
+[0m19:40:52.709181 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.jaffle_shop.metricflow_time_spine, now model.jaffle_shop.order_items)
+[0m19:40:52.710249 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.order_items
+[0m19:40:52.720631 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.order_items"
+[0m19:40:52.721943 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.order_items
+[0m19:40:52.736210 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.order_items"
+[0m19:40:52.737562 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.order_items"
+[0m19:40:52.738612 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: BEGIN
+[0m19:40:52.739627 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:52.792431 [debug] [Thread-1  ]: SQL status: BEGIN in 0.053 seconds
+[0m19:40:52.793547 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.order_items"
+[0m19:40:52.794672 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.order_items"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."order_items__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with
+
+order_items as (
+
+    select * from "gaussdb"."jaffle_shop"."stg_order_items"
+
+),
+
+
+orders as (
+
+    select * from   "gaussdb"."jaffle_shop"."stg_orders"
+
+),
+
+products as (
+
+    select * from "gaussdb"."jaffle_shop"."stg_products"
+
+),
+
+supplies as (
+
+    select * from  "gaussdb"."jaffle_shop"."stg_supplies"
+
+),
+
+order_supplies_summary as (
+
+    select
+        product_id,
+
+        sum(supply_cost) as supply_cost
+
+    from supplies
+
+    group by 1
+
+),
+
+joined as (
+
+    select
+        order_items.*,
+
+        orders.ordered_at,
+
+        products.product_name,
+        products.product_price,
+        products.is_food_item,
+        products.is_drink_item,
+
+        order_supplies_summary.supply_cost
+
+    from order_items
+
+    left join orders on order_items.order_id = orders.order_id
+
+    left join products on order_items.product_id = products.product_id
+
+    left join order_supplies_summary
+        on order_items.product_id = order_supplies_summary.product_id
+
+)
+
+select * from joined
+  );
+  
+[0m19:40:53.054273 [debug] [Thread-1  ]: SQL status: INSERT 0 90899 in 0.258 seconds
+[0m19:40:53.063295 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.order_items"
+[0m19:40:53.064444 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.order_items"} */
+alter table "gaussdb"."jaffle_shop"."order_items" rename to "order_items__dbt_backup"
+[0m19:40:53.068505 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.003 seconds
+[0m19:40:53.077270 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.order_items"
+[0m19:40:53.078369 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.order_items"} */
+alter table "gaussdb"."jaffle_shop"."order_items__dbt_tmp" rename to "order_items"
+[0m19:40:53.081180 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:53.084549 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: COMMIT
+[0m19:40:53.085641 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.order_items"
+[0m19:40:53.086699 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: COMMIT
+[0m19:40:53.089373 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:53.096812 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."order_items__dbt_backup"
+[0m19:40:53.098342 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.order_items"
+[0m19:40:53.099419 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.order_items"} */
+drop table if exists "gaussdb"."jaffle_shop"."order_items__dbt_backup" cascade
+[0m19:40:53.114183 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.014 seconds
+[0m19:40:53.117251 [debug] [Thread-1  ]: On model.jaffle_shop.order_items: Close
+[0m19:40:53.118706 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa230e1f0>]}
+[0m19:40:53.120352 [info ] [Thread-1  ]: 3 of 7 OK created sql table model jaffle_shop.order_items ...................... [[32mINSERT 0 90899[0m in 0.41s]
+[0m19:40:53.121876 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.order_items
+[0m19:40:53.123083 [debug] [Thread-1  ]: Began running node model.jaffle_shop.products
+[0m19:40:53.124841 [info ] [Thread-1  ]: 4 of 7 START sql table model jaffle_shop.products .............................. [RUN]
+[0m19:40:53.126000 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.jaffle_shop.order_items, now model.jaffle_shop.products)
+[0m19:40:53.127081 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.products
+[0m19:40:53.138536 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.products"
+[0m19:40:53.139864 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.products
+[0m19:40:53.150224 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.products"
+[0m19:40:53.151568 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.products"
+[0m19:40:53.152684 [debug] [Thread-1  ]: On model.jaffle_shop.products: BEGIN
+[0m19:40:53.153713 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:53.195187 [debug] [Thread-1  ]: SQL status: BEGIN in 0.041 seconds
+[0m19:40:53.196299 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.products"
+[0m19:40:53.197370 [debug] [Thread-1  ]: On model.jaffle_shop.products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.products"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."products__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with
+
+products as (
+
+    select * from  "gaussdb"."jaffle_shop"."stg_products"
+
+)
+
+select * from products
+  );
+  
+[0m19:40:53.204944 [debug] [Thread-1  ]: SQL status: INSERT 0 9 in 0.006 seconds
+[0m19:40:53.213775 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.products"
+[0m19:40:53.214873 [debug] [Thread-1  ]: On model.jaffle_shop.products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.products"} */
+alter table "gaussdb"."jaffle_shop"."products" rename to "products__dbt_backup"
+[0m19:40:53.217953 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:53.226524 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.products"
+[0m19:40:53.227624 [debug] [Thread-1  ]: On model.jaffle_shop.products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.products"} */
+alter table "gaussdb"."jaffle_shop"."products__dbt_tmp" rename to "products"
+[0m19:40:53.230437 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:53.234026 [debug] [Thread-1  ]: On model.jaffle_shop.products: COMMIT
+[0m19:40:53.235105 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.products"
+[0m19:40:53.236191 [debug] [Thread-1  ]: On model.jaffle_shop.products: COMMIT
+[0m19:40:53.238815 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:53.246183 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."products__dbt_backup"
+[0m19:40:53.247701 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.products"
+[0m19:40:53.248804 [debug] [Thread-1  ]: On model.jaffle_shop.products: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.products"} */
+drop table if exists "gaussdb"."jaffle_shop"."products__dbt_backup" cascade
+[0m19:40:53.253547 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.004 seconds
+[0m19:40:53.256601 [debug] [Thread-1  ]: On model.jaffle_shop.products: Close
+[0m19:40:53.258031 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa230e1f0>]}
+[0m19:40:53.259617 [info ] [Thread-1  ]: 4 of 7 OK created sql table model jaffle_shop.products ......................... [[32mINSERT 0 9[0m in 0.13s]
+[0m19:40:53.261179 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.products
+[0m19:40:53.262379 [debug] [Thread-1  ]: Began running node model.jaffle_shop.supplies
+[0m19:40:53.263868 [info ] [Thread-1  ]: 5 of 7 START sql table model jaffle_shop.supplies .............................. [RUN]
+[0m19:40:53.265046 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.jaffle_shop.products, now model.jaffle_shop.supplies)
+[0m19:40:53.266120 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.supplies
+[0m19:40:53.277785 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.supplies"
+[0m19:40:53.279096 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.supplies
+[0m19:40:53.289471 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.supplies"
+[0m19:40:53.290817 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.supplies"
+[0m19:40:53.291895 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: BEGIN
+[0m19:40:53.292943 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:53.333832 [debug] [Thread-1  ]: SQL status: BEGIN in 0.041 seconds
+[0m19:40:53.334925 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.supplies"
+[0m19:40:53.336016 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.supplies"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."supplies__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with
+
+supplies as (
+
+    select * from  "gaussdb"."jaffle_shop"."stg_supplies"
+
+)
+
+select * from supplies
+  );
+  
+[0m19:40:53.344041 [debug] [Thread-1  ]: SQL status: INSERT 0 64 in 0.007 seconds
+[0m19:40:53.353089 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.supplies"
+[0m19:40:53.354183 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.supplies"} */
+alter table "gaussdb"."jaffle_shop"."supplies" rename to "supplies__dbt_backup"
+[0m19:40:53.357294 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:53.365781 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.supplies"
+[0m19:40:53.366872 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.supplies"} */
+alter table "gaussdb"."jaffle_shop"."supplies__dbt_tmp" rename to "supplies"
+[0m19:40:53.369627 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:53.372998 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: COMMIT
+[0m19:40:53.374078 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.supplies"
+[0m19:40:53.375129 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: COMMIT
+[0m19:40:53.377758 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:53.385336 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."supplies__dbt_backup"
+[0m19:40:53.386869 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.supplies"
+[0m19:40:53.387959 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.supplies"} */
+drop table if exists "gaussdb"."jaffle_shop"."supplies__dbt_backup" cascade
+[0m19:40:53.392792 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.004 seconds
+[0m19:40:53.395845 [debug] [Thread-1  ]: On model.jaffle_shop.supplies: Close
+[0m19:40:53.397301 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6f454910>]}
+[0m19:40:53.398887 [info ] [Thread-1  ]: 5 of 7 OK created sql table model jaffle_shop.supplies ......................... [[32mINSERT 0 64[0m in 0.13s]
+[0m19:40:53.400450 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.supplies
+[0m19:40:53.401655 [debug] [Thread-1  ]: Began running node model.jaffle_shop.orders
+[0m19:40:53.403125 [info ] [Thread-1  ]: 6 of 7 START sql table model jaffle_shop.orders ................................ [RUN]
+[0m19:40:53.404313 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.jaffle_shop.supplies, now model.jaffle_shop.orders)
+[0m19:40:53.405400 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.orders
+[0m19:40:53.418070 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.orders"
+[0m19:40:53.419387 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.orders
+[0m19:40:53.429914 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.orders"
+[0m19:40:53.431269 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.orders"
+[0m19:40:53.432367 [debug] [Thread-1  ]: On model.jaffle_shop.orders: BEGIN
+[0m19:40:53.433400 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:53.474225 [debug] [Thread-1  ]: SQL status: BEGIN in 0.041 seconds
+[0m19:40:53.475311 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.orders"
+[0m19:40:53.476497 [debug] [Thread-1  ]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.orders"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."orders__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with
+
+orders as (
+
+    select * from  "gaussdb"."jaffle_shop"."stg_orders"
+
+),
+
+order_items as (
+
+    select * from "gaussdb"."jaffle_shop"."order_items"
+
+),
+
+order_items_summary as (
+
+    select
+        order_id,
+
+        sum(supply_cost) as order_cost,
+        sum(product_price) as order_items_subtotal,
+        count(order_item_id) as count_order_items,
+        sum(
+            case
+                when is_food_item then 1
+                else 0
+            end
+        ) as count_food_items,
+        sum(
+            case
+                when is_drink_item then 1
+                else 0
+            end
+        ) as count_drink_items
+
+    from order_items
+
+    group by 1
+
+),
+
+compute_booleans as (
+
+    select
+        orders.*,
+
+        order_items_summary.order_cost,
+        order_items_summary.order_items_subtotal,
+        order_items_summary.count_food_items,
+        order_items_summary.count_drink_items,
+        order_items_summary.count_order_items,
+        order_items_summary.count_food_items > 0 as is_food_order,
+        order_items_summary.count_drink_items > 0 as is_drink_order
+
+    from orders
+
+    left join
+        order_items_summary
+        on orders.order_id = order_items_summary.order_id
+
+),
+
+customer_order_count as (
+
+    select
+        *,
+
+        row_number() over (
+            partition by customer_id
+            order by ordered_at asc
+        ) as customer_order_number
+
+    from compute_booleans
+
+)
+
+select * from customer_order_count
+  );
+  
+[0m19:40:54.041184 [debug] [Thread-1  ]: SQL status: INSERT 0 61947 in 0.563 seconds
+[0m19:40:54.050108 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.orders"
+[0m19:40:54.051208 [debug] [Thread-1  ]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.orders"} */
+alter table "gaussdb"."jaffle_shop"."orders" rename to "orders__dbt_backup"
+[0m19:40:54.055167 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.003 seconds
+[0m19:40:54.063634 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.orders"
+[0m19:40:54.064760 [debug] [Thread-1  ]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.orders"} */
+alter table "gaussdb"."jaffle_shop"."orders__dbt_tmp" rename to "orders"
+[0m19:40:54.067570 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:54.070925 [debug] [Thread-1  ]: On model.jaffle_shop.orders: COMMIT
+[0m19:40:54.072022 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.orders"
+[0m19:40:54.073098 [debug] [Thread-1  ]: On model.jaffle_shop.orders: COMMIT
+[0m19:40:54.075791 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:54.085947 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."orders__dbt_backup"
+[0m19:40:54.087483 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.orders"
+[0m19:40:54.088597 [debug] [Thread-1  ]: On model.jaffle_shop.orders: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.orders"} */
+drop table if exists "gaussdb"."jaffle_shop"."orders__dbt_backup" cascade
+[0m19:40:54.097505 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.008 seconds
+[0m19:40:54.100565 [debug] [Thread-1  ]: On model.jaffle_shop.orders: Close
+[0m19:40:54.102006 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9def16a0>]}
+[0m19:40:54.103600 [info ] [Thread-1  ]: 6 of 7 OK created sql table model jaffle_shop.orders ........................... [[32mINSERT 0 61947[0m in 0.70s]
+[0m19:40:54.105149 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.orders
+[0m19:40:54.107054 [debug] [Thread-1  ]: Began running node model.jaffle_shop.customers
+[0m19:40:54.108407 [info ] [Thread-1  ]: 7 of 7 START sql table model jaffle_shop.customers ............................. [RUN]
+[0m19:40:54.109585 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.jaffle_shop.orders, now model.jaffle_shop.customers)
+[0m19:40:54.110672 [debug] [Thread-1  ]: Began compiling node model.jaffle_shop.customers
+[0m19:40:54.119729 [debug] [Thread-1  ]: Writing injected SQL for node "model.jaffle_shop.customers"
+[0m19:40:54.121068 [debug] [Thread-1  ]: Began executing node model.jaffle_shop.customers
+[0m19:40:54.131541 [debug] [Thread-1  ]: Writing runtime sql for node "model.jaffle_shop.customers"
+[0m19:40:54.132942 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.customers"
+[0m19:40:54.134000 [debug] [Thread-1  ]: On model.jaffle_shop.customers: BEGIN
+[0m19:40:54.135022 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m19:40:54.179563 [debug] [Thread-1  ]: SQL status: BEGIN in 0.044 seconds
+[0m19:40:54.180709 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.customers"
+[0m19:40:54.181848 [debug] [Thread-1  ]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.customers"} */
+
+  
+    
+
+  create  table "gaussdb"."jaffle_shop"."customers__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with
+
+customers as (
+
+    select * from "gaussdb"."jaffle_shop"."stg_customers"
+
+),
+
+orders as (
+
+    select * from "gaussdb"."jaffle_shop"."orders"
+
+),
+
+customer_orders_summary as (
+
+    select
+        orders.customer_id,
+
+        count(distinct orders.order_id) as count_lifetime_orders,
+        count(distinct orders.order_id) > 1 as is_repeat_buyer,
+        min(orders.ordered_at) as first_ordered_at,
+        max(orders.ordered_at) as last_ordered_at,
+        sum(orders.subtotal) as lifetime_spend_pretax,
+        sum(orders.tax_paid) as lifetime_tax_paid,
+        sum(orders.order_total) as lifetime_spend
+
+    from orders
+
+    group by 1
+
+),
+
+joined as (
+
+    select
+        customers.*,
+
+        customer_orders_summary.count_lifetime_orders,
+        customer_orders_summary.first_ordered_at,
+        customer_orders_summary.last_ordered_at,
+        customer_orders_summary.lifetime_spend_pretax,
+        customer_orders_summary.lifetime_tax_paid,
+        customer_orders_summary.lifetime_spend,
+
+        case
+            when customer_orders_summary.is_repeat_buyer then 'returning'
+            else 'new'
+        end as customer_type
+
+    from customers
+
+    left join customer_orders_summary
+        on customers.customer_id = customer_orders_summary.customer_id
+
+)
+
+select * from joined
+  );
+  
+[0m19:40:54.492815 [debug] [Thread-1  ]: SQL status: INSERT 0 934 in 0.310 seconds
+[0m19:40:54.501443 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.customers"
+[0m19:40:54.502538 [debug] [Thread-1  ]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.customers"} */
+alter table "gaussdb"."jaffle_shop"."customers__dbt_tmp" rename to "customers"
+[0m19:40:54.505473 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:40:54.508858 [debug] [Thread-1  ]: On model.jaffle_shop.customers: COMMIT
+[0m19:40:54.509937 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.customers"
+[0m19:40:54.510984 [debug] [Thread-1  ]: On model.jaffle_shop.customers: COMMIT
+[0m19:40:54.513672 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:54.520916 [debug] [Thread-1  ]: Applying DROP to: "gaussdb"."jaffle_shop"."customers__dbt_backup"
+[0m19:40:54.522456 [debug] [Thread-1  ]: Using gaussdbdws connection "model.jaffle_shop.customers"
+[0m19:40:54.523536 [debug] [Thread-1  ]: On model.jaffle_shop.customers: /* {"app": "dbt", "dbt_version": "1.8.9", "profile_name": "jaffle_shop", "target_name": "dev_dws", "node_id": "model.jaffle_shop.customers"} */
+drop table if exists "gaussdb"."jaffle_shop"."customers__dbt_backup" cascade
+[0m19:40:54.526310 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m19:40:54.529365 [debug] [Thread-1  ]: On model.jaffle_shop.customers: Close
+[0m19:40:54.530820 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '48b0f291-19d0-4a1a-9c61-342eb13fdcb9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff6f647c10>]}
+[0m19:40:54.532439 [info ] [Thread-1  ]: 7 of 7 OK created sql table model jaffle_shop.customers ........................ [[32mINSERT 0 934[0m in 0.42s]
+[0m19:40:54.533966 [debug] [Thread-1  ]: Finished running node model.jaffle_shop.customers
+[0m19:40:54.536318 [debug] [MainThread]: Using gaussdbdws connection "master"
+[0m19:40:54.537405 [debug] [MainThread]: On master: BEGIN
+[0m19:40:54.538408 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:40:54.586355 [debug] [MainThread]: SQL status: BEGIN in 0.048 seconds
+[0m19:40:54.587436 [debug] [MainThread]: On master: COMMIT
+[0m19:40:54.588518 [debug] [MainThread]: Using gaussdbdws connection "master"
+[0m19:40:54.589548 [debug] [MainThread]: On master: COMMIT
+[0m19:40:54.592167 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m19:40:54.593242 [debug] [MainThread]: On master: Close
+[0m19:40:54.594690 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:40:54.595777 [debug] [MainThread]: Connection 'model.jaffle_shop.customers' was properly closed.
+[0m19:40:54.597031 [info ] [MainThread]: 
+[0m19:40:54.598114 [info ] [MainThread]: Finished running 7 table models in 0 hours 0 minutes and 2.81 seconds (2.81s).
+[0m19:40:54.602220 [debug] [MainThread]: Command end result
+[0m19:40:54.735009 [info ] [MainThread]: 
+[0m19:40:54.736255 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:40:54.737281 [info ] [MainThread]: 
+[0m19:40:54.738348 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m19:40:54.740329 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 9.665491, "process_in_blocks": "0", "process_kernel_time": 0.303831, "process_mem_max_rss": "116404", "process_out_blocks": "5280", "process_user_time": 10.275382}
+[0m19:40:54.741872 [debug] [MainThread]: Command `dbt run` succeeded at 19:40:54.741590 after 9.67 seconds
+[0m19:40:54.743005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa04fcdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9fe34520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff9eff5700>]}
+[0m19:40:54.744145 [debug] [MainThread]: Flushing usage events
